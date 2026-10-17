@@ -50,11 +50,11 @@ function playGame(playerMove) {
   }
 
   if (result === 'win') {
-    score.wins = score.wins + 1
+    score.wins += 1
   } else if (result === 'lose') {
-    score.losses = score.losses + 1
+    score.losses += 1
   } else if (result === 'tie') {
-    score.ties = score.ties + 1
+    score.ties += 1
   }
 
   let final = `You picked ${playerMove}. Computer picked ${computerMove}. result is ${result}`
