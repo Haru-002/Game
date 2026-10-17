@@ -1,8 +1,14 @@
 let whoWon = document.querySelector('.results')
 let computerMove = ''
 let scores = document.querySelector('.score')
-const score = { wins: 0, losses: 0, ties: 0 }
+const score = JSON.parse(localStorage.getItem('saveScore')) || {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
+JSON.parse(localStorage.getItem('saveStore'))
 
+scores.textContent = `You're  score is, wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
 
 function pickComputerChoice() {
   const randomShit = Math.random()
@@ -56,6 +62,7 @@ function playGame(playerMove) {
   } else if (result === 'tie') {
     score.ties += 1
   }
+  localStorage.setItem('saveScore', JSON.stringify(score))
 
   let final = `You picked ${playerMove}. Computer picked ${computerMove}. result is ${result}`
 
@@ -76,6 +83,8 @@ function ResetScore() {
   score.wins = 0
   score.losses = 0
   score.ties = 0
+
+  localStorage.setItem('saveScore', JSON.stringify(score))
 
   scores.textContent = `You're score is, wins: ${score.wins}, losses: ${score.losses}, ties ${score.ties}`
   whoWon.textContent = 'Start Again!!'
