@@ -31,8 +31,7 @@
       font-size: 52px;
       letter-spacing: 4px;
       text-align: center;
-      text-shadow: 0 0 20px rgba(168, 85, 247, 0.6),
-        0 0 40px rgba(168, 85, 247, 0.4);
+      text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(168, 85, 247, 0.4);
     }
 
     .buttons {
@@ -86,53 +85,36 @@
       text-shadow: 0 0 10px rgba(255, 117, 140, 0.4);
       max-width: 600px;
     }
-    @media (max-width: 768px) {
-    .title {
-      font-size: 38px;
-      letter-spacing: 2px;
-    }
 
-    button {
-      padding: 14px 28px;
-      font-size: 20px;
-    }
-
-    .results {
-      font-size: 20px;
-      padding: 15px 25px;
-      max-width: 90%;
-    }
-  }
     @media (max-width: 480px) {
-    body {
-      gap: 20px;
-      padding: 15px;
-    }
+      body {
+        gap: 20px;
+        padding: 15px;
+      }
 
-    .title {
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
+      .title {
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
 
-    .buttons {
-      flex-direction: column;
-      width: 100%;
-      gap: 15px;
-    }
+      .buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+      }
 
-    button {
-      width: 100%;
-      padding: 14px;
-      font-size: 18px;
-    }
+      button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+      }
 
-    .results {
-      font-size: 18px;
-      padding: 15px 20px;
-      max-width: 100%;
+      .results {
+        font-size: 18px;
+        padding: 15px 20px;
+        max-width: 100%;
+      }
     }
-  }
-    
   </style>
 </head>
 
@@ -147,8 +129,10 @@
     </div>
 
   </div>
-  <h1 class="results"></h1>
 
+  <h1 class="results">Come on start playing!!</h1>
+  <h1 class="results score">You're score is, wins: 0, losses: 0, ties 0</h1>
+  <button onclick="ResetScore()">Reset Score</button>
 </body>
 
 </html>

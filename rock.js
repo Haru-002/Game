@@ -1,6 +1,9 @@
 let whoWon = document.querySelector('.results')
-
 let computerMove = ''
+let scores = document.querySelector('.score')
+const score = { wins: 0, losses: 0, ties: 0 }
+
+
 function pickComputerChoice() {
   const randomShit = Math.random()
 
@@ -46,7 +49,17 @@ function playGame(playerMove) {
     }
   }
 
+  if (result === 'win') {
+    score.wins = score.wins + 1
+  } else if (result === 'lose') {
+    score.losses = score.losses + 1
+  } else if (result === 'tie') {
+    score.ties = score.ties + 1
+  }
+
   let final = `You picked ${playerMove}. Computer picked ${computerMove}. result is ${result}`
+
+  let FinalScore = `You're score is, wins: ${score.wins}, losses: ${score.losses}, ties ${score.ties}`
 
   if (result === 'win') {
     whoWon.style.color = 'green'
@@ -56,4 +69,15 @@ function playGame(playerMove) {
     whoWon.style.color = 'red'
   }
   whoWon.textContent = final + '!!'
+  scores.textContent = FinalScore
+}
+
+function ResetScore() {
+  score.wins = 0
+  score.losses = 0
+  score.ties = 0
+
+  scores.textContent = `You're score is, wins: ${score.wins}, losses: ${score.losses}, ties ${score.ties}`
+  whoWon.textContent = 'Start Again!!'
+  whoWon.style.color = 'green'
 }
