@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock paper scissor game </title>
+  <script src="rock.js" defer></script>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+      height: 100vh;
+      background: radial-gradient(circle at center, #1b072b 0%, #0d0214 100%);
+      overflow: hidden;
+    }
+
+    .title {
+      color: #fff;
+      font-weight: 900;
+      font-size: 52px;
+      letter-spacing: 4px;
+      text-align: center;
+      text-shadow: 0 0 20px rgba(168, 85, 247, 0.6),
+        0 0 40px rgba(168, 85, 247, 0.4);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 25px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #2d1b4e 0%, #1f1135 100%);
+      color: #00f0ff;
+      border: 2px solid rgba(0, 240, 255, 0.3);
+      border-radius: 16px;
+      padding: 18px 36px;
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #3b2363 0%, #2a1648 100%);
+      color: #fff;
+      border-color: #00f0ff;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 240, 255, 0.3),
+        0 0 15px rgba(0, 240, 255, 0.2);
+    }
+
+    button:active {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 240, 255, 0.2);
+    }
+
+    .results {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ff758c;
+      background: rgba(20, 5, 30, 0.6);
+      border: 1px solid rgba(255, 117, 140, 0.2);
+      padding: 20px 40px;
+      border-radius: 12px;
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      text-shadow: 0 0 10px rgba(255, 117, 140, 0.4);
+      max-width: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">ROCK PAPER SCISSORS</h1>
+
+  <div>
+    <div class="buttons">
+      <button onclick="playGame('Rock')">Rock</button>
+      <button onclick="playGame('Paper')">Paper</button>
+      <button onclick="playGame('Scissors')">Scissors</button>
+    </div>
+
+  </div>
+  <h1 class="results"></h1>
+
+</body>
+
+</html>
